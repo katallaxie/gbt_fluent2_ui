@@ -104,20 +104,26 @@ class MultiLineListExampleView extends StatelessWidget {
               ),
               listItems: [
                 ...exampleListUsers.map(
-                  (user) => FluentListItemMultiLine(
-                    text: user.name,
-                    subtext: user.text,
-                    trailing: user.trailing,
-                    leading: FluentAvatar(
-                      child: Image.asset(
-                        user.coverImageUrl,
-                        fit: BoxFit.cover,
-                        width: double.maxFinite,
-                        height: double.maxFinite,
+                  (user) => Dismissible(
+                    key: UniqueKey(),
+                    onDismissed: (direction) {},
+                    background: Container(color: Colors.green),
+                    secondaryBackground: Container(color: Colors.red),
+                    child: FluentListItemMultiLine(
+                      text: user.name,
+                      subtext: user.text,
+                      trailing: user.trailing,
+                      leading: FluentAvatar(
+                        child: Image.asset(
+                          user.coverImageUrl,
+                          fit: BoxFit.cover,
+                          width: double.maxFinite,
+                          height: double.maxFinite,
+                        ),
                       ),
                     ),
                   ),
-                ),
+                )
               ],
             ),
             FluentList.multiLine(

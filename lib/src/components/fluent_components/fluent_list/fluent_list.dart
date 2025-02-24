@@ -22,7 +22,7 @@ class FluentList extends StatelessWidget {
 
   /// FluentList's constructor
   const FluentList.oneLine({
-    required List<FluentListItemOneLine> this.listItems,
+    required this.listItems,
     super.key,
     this.sectionHeaderTitle,
     this.sectionHeaderActions,
@@ -54,7 +54,7 @@ class FluentList extends StatelessWidget {
 
   /// FluentList's constructor
   const FluentList.multiLine({
-    required List<FluentListItemMultiLine> this.listItems,
+    required this.listItems,
     super.key,
     this.sectionHeaderTitle,
     this.sectionHeaderActions,
